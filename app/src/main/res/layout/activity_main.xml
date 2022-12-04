@@ -14,4 +14,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/add_button"
+        android:background="@drawable/add_button_style"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginBottom="30dp"
+        android:text="@string/button"
+        android:paddingTop="0dp"
+        android:textSize="35sp"
+        android:textFontWeight="@integer/material_motion_duration_long_2"
+        android:textColor="#C0ECDC"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
