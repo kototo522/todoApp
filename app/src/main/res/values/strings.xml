@@ -16,4 +16,6 @@
     <string name="titleview">TitleView</string>
     <string name="textview">TextView</string>
     <string name="button">+</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
