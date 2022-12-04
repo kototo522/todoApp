@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">TodoApp</string>
+
+
+    <string name="titleList1">title1</string>
+    <string name="titleList2">title2</string>
+    <string name="titleList3">title3</string>
+    <string name="titleList4">title4</string>
+    <string name="titleList5">title5</string>
+
+    <string name="textList1">text1</string>
+    <string name="textList2">text2</string>
+    <string name="textList3">text3</string>
+    <string name="textList4">text4</string>
+    <string name="textList5">text5</string>
+    <string name="titleview">TitleView</string>
+    <string name="textview">TextView</string>
 </resources>
