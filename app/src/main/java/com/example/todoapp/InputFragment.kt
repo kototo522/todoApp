@@ -27,7 +27,7 @@ class InputFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_imput, container, false)
+        return inflater.inflate(R.layout.fragment_input, container, false)
     }
 
     companion object {
