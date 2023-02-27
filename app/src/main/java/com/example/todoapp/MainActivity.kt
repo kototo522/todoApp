@@ -2,11 +2,11 @@ package com.example.todoapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todoapp.InputFragment.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.input_button)
         button.setOnClickListener{
+            InputFragment().openBottomSheet()
             Toast.makeText(this, "ボタンが押されました", Toast.LENGTH_LONG).show()
         }
 
