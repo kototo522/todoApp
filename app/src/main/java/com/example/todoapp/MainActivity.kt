@@ -1,7 +1,10 @@
 package com.example.todoapp
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.AttributeSet
+import android.view.View
 import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -19,9 +22,8 @@ class MainActivity : AppCompatActivity() {
 
         val button = findViewById<Button>(R.id.input_button)
         button.setOnClickListener{
-            InputFragment().openBottomSheet()
             Toast.makeText(this, "ボタンが押されました", Toast.LENGTH_LONG).show()
+            InputFragment().openBottomSheet()
         }
-
     }
 }

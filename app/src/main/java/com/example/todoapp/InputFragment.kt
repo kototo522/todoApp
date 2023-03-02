@@ -13,25 +13,21 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
 class InputFragment : Fragment() {
+    private lateinit var bottomSheet: View
+    private lateinit var bottomSheetBehavior: BottomSheetBehavior<View>
 
-    private lateinit var mBottomSheet: BottomSheetBehavior<LinearLayout>
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        }
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_input, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
+        val view = inflater.inflate(R.layout.fragment_input, container, false)
+        bottomSheet = view.findViewById(R.id.bottom_sheet_layout)
+        bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+        bottomSheetBehavior.saveFlags = BottomSheetBehavior.SAVE_ALL
+        return view
     }
 
     fun openBottomSheet(){
         println("oppppen")
-        val bottomSheet = view?.findViewById<LinearLayout>(R.id.bottom_sheet_layout)
-        mBottomSheet = BottomSheetBehavior.from(bottomSheet!!)
-        mBottomSheet.state = BottomSheetBehavior.STATE_COLLAPSED
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
     }
+
 }
