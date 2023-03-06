@@ -20,8 +20,9 @@ class InputFragment : Fragment() {
         super.onCreateView(inflater, container, savedInstanceState)
         val view = inflater.inflate(R.layout.fragment_input, container, false)
         bottomSheet = view.findViewById(R.id.bottom_sheet_layout)
-
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
+
         bottomSheetBehavior.addBottomSheetCallback(object : BottomSheetCallback() {
             override fun onStateChanged(bottomSheet: View, newState: Int) {
                 when (newState) {
@@ -30,19 +31,20 @@ class InputFragment : Fragment() {
                     BottomSheetBehavior.STATE_EXPANDED -> {}
                     BottomSheetBehavior.STATE_COLLAPSED -> {}
                     BottomSheetBehavior.STATE_HIDDEN -> {}
+                    else -> {}
                 }
             }
             override fun onSlide(bottomSheet: View, slideOffset: Float) {}
         })
         bottomSheetBehavior.saveFlags = BottomSheetBehavior.SAVE_ALL
-
         return view
-
     }
 
     fun openBottomSheet(){
-        println("open")
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        if (::bottomSheetBehavior.isInitialized) {
+                println("open")
+                bottomSheetBehavior.state = BottomSheetBehavior.STATE_EXPANDED
+        }
     }
 
 }
