@@ -9,7 +9,6 @@
         android:id="@+id/bottom_sheet_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:behavior_hideable="true"
         app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:orientation="vertical">
 
@@ -18,31 +17,46 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Bottom Sheet Layout1" />
+            <Button
+                android:id="@+id/exit_button"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:text="×"
+                />
 
             <TextView
+                android:id="@+id/title_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="タイトル"/>
+
+            <EditText
+                android:id="@+id/edit_title"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="Bottom Sheet Layout2" />
+                android:layout_height="60dp"
+                android:textSize="30sp"
+                android:inputType="text"/>
 
             <TextView
                 android:id="@+id/text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/black"
-                android:textSize="25sp"
-                android:text="aaa"/>
+                android:textSize="14sp"
+                android:text="テキスト" />
 
             <EditText
                 android:id="@+id/edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
-                android:textSize="35sp"
-                android:autofillHints="name"
+                android:textSize="30sp"
                 android:inputType="text"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="ラベル色" />
 
             <Button
                 android:id="@+id/edit_button"
@@ -50,6 +64,7 @@
                 android:layout_height="50dp"
                 android:text="+"
                 />
+
         </LinearLayout>
     </FrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

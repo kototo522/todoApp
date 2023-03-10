@@ -33,14 +33,19 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
         bottomSheet = view.findViewById(R.id.bottom_sheet_layout)
         bottomSheet.layoutParams.height = LinearLayout.LayoutParams.MATCH_PARENT
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
-        bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         val screenHeight = Resources.getSystem().displayMetrics.heightPixels
         bottomSheetBehavior.peekHeight = screenHeight
 
         binding.editButton.setOnClickListener {
+            if(binding.editTitle.text != null){
+                binding.titleView.text = binding.editTitle.text.toString()
+            }
             if(binding.editText.text != null){
                 binding.textView.text = binding.editText.text.toString()
             }
+        }
+
+        binding.exitButton.setOnClickListener {
         }
     }
 
