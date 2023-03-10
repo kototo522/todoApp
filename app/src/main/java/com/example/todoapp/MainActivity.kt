@@ -6,7 +6,6 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.todoapp.InputFragment.*
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,9 +17,11 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         val button = findViewById<Button>(R.id.input_button)
+
         button.setOnClickListener{
             Toast.makeText(this, "ボタンが押されました", Toast.LENGTH_LONG).show()
-            InputFragment().openBottomSheet()
+            val modalBottomSheet = ModalBottomSheet()
+            modalBottomSheet.show(supportFragmentManager, ModalBottomSheet.TAG)
         }
     }
 }
