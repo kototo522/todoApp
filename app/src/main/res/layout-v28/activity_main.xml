@@ -29,5 +29,4 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <include layout="@layout/fragment_input"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
