@@ -2,71 +2,67 @@
 <androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
-    <FrameLayout
+    <LinearLayout
         android:id="@+id/bottom_sheet_layout"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
+        app:behavior_hideable="true"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior"
         android:orientation="vertical">
 
-        <LinearLayout
+        <Button
+            android:id="@+id/exit_button"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:text="×"
+            android:textSize="36dp"
+            />
+
+        <TextView
+            android:id="@+id/title_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="タイトル"/>
+
+        <EditText
+            android:id="@+id/edit_title"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="60dp"
+            android:textSize="30sp"
+            android:layout_marginLeft="30dp"
+            android:inputType="text"/>
 
-            <Button
-                android:id="@+id/exit_button"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:text="×"
-                android:textSize="36dp"
-                />
+        <TextView
+            android:id="@+id/text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="テキスト" />
 
-            <TextView
-                android:id="@+id/title_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="タイトル"/>
+        <EditText
+            android:id="@+id/edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:textSize="30sp"
+            android:layout_marginLeft="30dp"
+            android:inputType="text"/>
 
-            <EditText
-                android:id="@+id/edit_title"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:textSize="30sp"
-                android:layout_marginLeft="30dp"
-                android:inputType="text"/>
-
-            <TextView
-                android:id="@+id/text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="テキスト" />
-
-            <EditText
-                android:id="@+id/edit_text"
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:textSize="30sp"
-                android:layout_marginLeft="30dp"
-                android:inputType="text"/>
-
-            <TextView
-                android:id="@+id/label_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:text="ラベル色" />
+        <TextView
+            android:id="@+id/label_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="ラベル色" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:behavior_hideable="true">
 
                 <Button
                     android:id="@+id/color_select_Button1"
@@ -91,7 +87,6 @@
                     android:layout_marginLeft="10dp"
                     android:backgroundTint="@color/black"
                     />
-
             </LinearLayout>
 
             <Button
@@ -102,7 +97,5 @@
                 android:textSize="36dp"
                 android:background="@color/teal_200"
                 />
-
         </LinearLayout>
-    </FrameLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
