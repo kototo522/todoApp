@@ -5,8 +5,8 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.todoapp.databinding.FragmentInputBinding
 import android.widget.LinearLayout
+import com.example.todoapp.databinding.FragmentInputBinding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
@@ -31,21 +31,30 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         bottomSheet = view.findViewById(R.id.bottom_sheet_layout)
-        bottomSheet.layoutParams.height = LinearLayout.LayoutParams.MATCH_PARENT
         bottomSheetBehavior = BottomSheetBehavior.from(bottomSheet)
+        bottomSheet.layoutParams.height = LinearLayout.LayoutParams.MATCH_PARENT
+        bottomSheetBehavior.saveFlags = BottomSheetBehavior.SAVE_ALL
         val screenHeight = Resources.getSystem().displayMetrics.heightPixels
         bottomSheetBehavior.peekHeight = screenHeight
 
         binding.editButton.setOnClickListener {
-            if(binding.editTitle.text != null){
-                binding.titleView.text = binding.editTitle.text.toString()
-            }
-            if(binding.editText.text != null){
-                binding.textView.text = binding.editText.text.toString()
-            }
+            if(binding.editTitle.text != null) binding.titleView.text = binding.editTitle.text.toString()
+            if(binding.editText.text != null) binding.textView.text = binding.editText.text.toString()
+        }
+
+        // もっとシンプルにできそう
+        binding.colorSelectButton1.setOnClickListener {
+            binding.labelText.text = "1"
+        }
+        binding.colorSelectButton2.setOnClickListener {
+            binding.labelText.text = "2"
+        }
+        binding.colorSelectButton3.setOnClickListener {
+            binding.labelText.text = "3"
         }
 
         binding.exitButton.setOnClickListener {
+            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
     }
 
