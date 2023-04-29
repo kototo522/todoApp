@@ -34,10 +34,10 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
         binding.editButton.setOnClickListener {
             if(binding.editTitle.text != null) binding.titleView.text = binding.editTitle.text.toString()
             if(binding.editText.text != null) binding.textView.text = binding.editText.text.toString()
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+            this.dismiss()
         }
         binding.exitButton.setOnClickListener {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_HIDDEN
+            this.dismiss()
         }
 
         // もっとシンプルにできそう
@@ -49,10 +49,6 @@ class ModalBottomSheet : BottomSheetDialogFragment() {
         }
         binding.colorSelectButton3.setOnClickListener {
             binding.labelText.text = "3"
-        }
-
-        binding.exitButton.setOnClickListener {
-            bottomSheetBehavior.state = BottomSheetBehavior.STATE_COLLAPSED
         }
     }
 
